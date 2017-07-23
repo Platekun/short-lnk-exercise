@@ -7,4 +7,5 @@ import '../imports/startup/simple-schema-config';
 
 Meteor.startup(() => {
     render(<AppRouter />, window.document.getElementById('root'));
+    Session.set('showVisible', true);
 });
