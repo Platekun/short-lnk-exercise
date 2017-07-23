@@ -22,7 +22,6 @@ class LinkList extends Component {
     componentDidMount() {
         this.tracker = Tracker.autorun(() => {
             Meteor.subscribe('links');
-            console.warn(`Session.get('showVisible')`, Session.get('showVisible'));
             const links = Links.find({ visible: Session.get('showVisible') }).fetch();
             this.setState((prevState, props) => ({ ...prevState, links }));
         });
